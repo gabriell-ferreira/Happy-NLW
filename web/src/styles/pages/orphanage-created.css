@@ -1,0 +1,47 @@
+#check-orphanage {
+  background-color: #37C77F;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#check-orphanage .text {
+  text-align: center;
+
+  margin-right: 100px;
+}
+
+#check-orphanage .text h1{
+  font-size: 80px;
+
+  margin-bottom: 20px;
+}
+
+#check-orphanage .text p {
+  font-size: 24px;
+
+  margin-bottom: 40px;
+}
+
+#check-orphanage .text button {
+  width: 243px;
+  height: 64px;
+
+  border-radius: 20px;
+  background: #31B272;
+  border: 1px solid #31B272;
+  color: #ffffff;
+  transition: 0.2s background-color
+}
+
+#check-orphanage .text button:hover {
+  background-color: #3BD689;
+}
+
+#check-orphanage .icon img{
+  width: 400px;
+  height: 490px;
+}

@@ -1,6 +1,6 @@
 import React, { FormEvent, useState, ChangeEvent } from "react";
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import { layerGroup, LeafletMouseEvent } from 'leaflet';
+import { LeafletMouseEvent } from 'leaflet';
 import { useHistory } from "react-router-dom";
 
 import { FiPlus } from "react-icons/fi";
@@ -74,9 +74,7 @@ export default function CreateOrphanage() {
 
     await api.post('orphanages', data);
 
-    alert('Cadastro realizado com sucesso!');
-
-    history.push('/app');
+    history.push('/created');
   }
 
   return (
