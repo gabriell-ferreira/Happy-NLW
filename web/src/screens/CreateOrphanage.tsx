@@ -77,6 +77,17 @@ export default function CreateOrphanage() {
     history.push('/created');
   }
 
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
+  
+  navigator.geolocation.getCurrentPosition(position => {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+
+    setLatitude(lat);
+    setLongitude(lng)
+  })
+
   return (
     <div id="page-create-orphanage">
       <Sidebar />
@@ -87,13 +98,13 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-3.040127, -59.9681566]} 
+              center={[latitude, longitude]} 
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onclick={handleMapClick}
             >
               <TileLayer 
-                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                url={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
               />
 
               { position.latitude !== 0 && (
